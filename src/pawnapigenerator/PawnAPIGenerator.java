@@ -242,7 +242,23 @@ public class PawnAPIGenerator {
         
         PawnAPIGenerator pag = new PawnAPIGenerator(new File(args[0]), Pattern.compile(REGEX_ALL));
         
-        pag.toFile("C:\\Users\\Michel\\Desktop\\SAMP\\PAWN.xml", "C:\\Users\\Michel\\Desktop\\SAMP\\userDefineLang.xml");
+        switch (args.length) {
+            case 1:
+            {
+                pag.toFile("PAWN.xml", "userDefineLang.xml");
+                break;
+            }
+            case 2:
+            {
+                pag.toFile(args[1], "userDefineLang.xml");
+                break;
+            }
+            case 3:
+            {
+                pag.toFile(args[1], args[2]);
+            }
+        }
+        
     }
     
 }
