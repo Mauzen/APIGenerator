@@ -1,0 +1,3445 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<NotepadPlus>
+	<AutoComplete language="PAWN">
+		<Environment ignoreCase="no" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" />
+		
+		<KeyWord name="#assert" />
+		<KeyWord name="#define" />
+		<KeyWord name="#else" />
+		<KeyWord name="#elseif" />
+		<KeyWord name="#emit" />
+		<KeyWord name="#endif" />
+		<KeyWord name="#endinput" />
+		<KeyWord name="#error" />
+		<KeyWord name="#file" />
+		<KeyWord name="#if" />
+		<KeyWord name="#include" />
+		<KeyWord name="#line" />
+		<KeyWord name="#pragma" />
+		<KeyWord name="#tryinclude" />
+		<KeyWord name="#undef" />
+		
+		<KeyWord name="_" />
+		<KeyWord name="======CountDown================" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="======PocketMoney==============" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="=====Random Spawn=============" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="A69_Lost" func="yes">
+			<Overload retVal="">
+				<Param name="looserteam" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ACC_OnGameModeExit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ACC_OnGameModeInit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ACC_OnPlayerConnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="acos" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AddPlayerClassEx" func="yes">
+			<Overload retVal="">
+				<Param name="teamid" />
+				<Param name="modelid" />
+				<Param name="Float:spawn_x" />
+				<Param name="Float:spawn_y" />
+				<Param name="Float:spawn_z" />
+				<Param name="Float:z_angle" />
+				<Param name="weapon1" />
+				<Param name="weapon1_ammo" />
+				<Param name="weapon2" />
+				<Param name="weapon2_ammo" />
+				<Param name="weapon3" />
+				<Param name="weapon3_ammo" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AddStaticVehicleEx" func="yes">
+			<Overload retVal="">
+				<Param name="modelid" />
+				<Param name="Float:spawn_x" />
+				<Param name="Float:spawn_y" />
+				<Param name="Float:spawn_z" />
+				<Param name="Float:z_angle" />
+				<Param name="color1" />
+				<Param name="color2" />
+				<Param name="respawn_delay" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AddVehicleComponent" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="componentid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AllowInteriorWeapons" func="yes">
+			<Overload retVal="">
+				<Param name="allow" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AllowPlayerTeleport" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="allow" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="anglemode" />
+		<KeyWord name="asin" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="assert" />
+		<KeyWord name="atan" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="atan2" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Attach3DTextLabelToVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="Text3D:id" />
+				<Param name="vehicleid" />
+				<Param name="Float:OffsetX" />
+				<Param name="Float:OffsetY" />
+				<Param name="Float:OffsetZ" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AttachCameraToObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AttachObjectToPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+				<Param name="playerid" />
+				<Param name="Float:OffsetX" />
+				<Param name="Float:OffsetY" />
+				<Param name="Float:OffsetZ" />
+				<Param name="Float:RotX" />
+				<Param name="Float:RotY" />
+				<Param name="Float:RotZ" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AttachObjectToVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+				<Param name="vehicleid" />
+				<Param name="Float:OffsetX" />
+				<Param name="Float:OffsetY" />
+				<Param name="Float:OffsetZ" />
+				<Param name="Float:RotX" />
+				<Param name="Float:RotY" />
+				<Param name="Float:RotZ" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AttachTrailerToVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="trailerid" />
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BanEx" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="const reason[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bool" />
+		<KeyWord name="BOT_FireUpdater" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BOT_StartShooting" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BOT_StopShooting" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="break" />
+		<KeyWord name="CallRemoteFunction" func="yes">
+			<Overload retVal="">
+				<Param name="const function[]" />
+				<Param name="const format[]" />
+				<Param name="{Float" />
+				<Param name="_}:..." />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CapturePointTimer" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="case" />
+		<KeyWord name="CE_OnPlayerConnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ChangeVehicleColor" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="color1" />
+				<Param name="color2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="char" />
+		<KeyWord name="clamp" func="yes">
+			<Overload retVal="">
+				<Param name="value" />
+				<Param name="min=cellmin" />
+				<Param name="max=cellmax" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CLASSES_OnPlayerConnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CLASSES_OnPlayerDisconnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CLASSES_OnPlayerRequestSpawn" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CLASSES_OnPlayerSpawn" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ClearAnimations" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="forcesync = 0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CloseNode" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ColorToChatString" func="yes">
+			<Overload retVal="">
+				<Param name="color" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="const" />
+		<KeyWord name="continue" />
+		<KeyWord name="ContinueRecordingPlayback" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="convertCheckpointsToSpawnMap" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ConvertGradToRoll" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:grad" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Countdown" func="yes">
+			<Overload retVal="">
+				<Param name="sound" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Create3DTextLabel" func="yes">
+			<Overload retVal="Text3D">
+				<Param name="text[]" />
+				<Param name="color" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:DrawDistance" />
+				<Param name="virtualworld" />
+				<Param name="testLOS=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateCountdown" func="yes">
+			<Overload retVal="">
+				<Param name="time" />
+				<Param name="sound" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateExpBar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateMapDialog" func="yes">
+			<Overload retVal="MapDialog">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateMenu" func="yes">
+			<Overload retVal="Menu">
+				<Param name="const title[]" />
+				<Param name="columns" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:col1width" />
+				<Param name="Float:col2width = 0.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="npcname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateNPCPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="id" />
+				<Param name="name[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateObject" func="yes">
+			<Overload retVal="">
+				<Param name="modelid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:rX" />
+				<Param name="Float:rY" />
+				<Param name="Float:rZ" />
+				<Param name="Float:DrawDistance = 0.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreatePickup" func="yes">
+			<Overload retVal="">
+				<Param name="model" />
+				<Param name="type" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="virtualworld = 0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreatePlayer3DTextLabel" func="yes">
+			<Overload retVal="PlayerText3D">
+				<Param name="playerid" />
+				<Param name="text[]" />
+				<Param name="color" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:DrawDistance" />
+				<Param name="attachedplayer=INVALID_PLAYER_ID" />
+				<Param name="attachedvehicle=INVALID_VEHICLE_ID" />
+				<Param name="testLOS=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreatePlayerLabel" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreatePlayerObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="modelid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:rX" />
+				<Param name="Float:rY" />
+				<Param name="Float:rZ" />
+				<Param name="Float:DrawDistance = 0.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateProfile" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CreateVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="vehicletype" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="Float:rotation" />
+				<Param name="color1" />
+				<Param name="color2" />
+				<Param name="respawn_delay" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Dam_Lost" func="yes">
+			<Overload retVal="">
+				<Param name="looserteam" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DamIntro2Scroller" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DB" />
+		<KeyWord name="db_close" func="yes">
+			<Overload retVal="">
+				<Param name="DB:db" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="db_field_name" func="yes">
+			<Overload retVal="">
+				<Param name="DBResult:dbresult" />
+				<Param name="field" />
+				<Param name="result[]" />
+				<Param name="maxlength" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="db_free_result" func="yes">
+			<Overload retVal="">
+				<Param name="DBResult:dbresult" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="db_next_row" func="yes">
+			<Overload retVal="">
+				<Param name="DBResult:dbresult" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="db_open" func="yes">
+			<Overload retVal="DB">
+				<Param name="name[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DBResult" />
+		<KeyWord name="default" />
+		<KeyWord name="defined" />
+		<KeyWord name="Delete3DTextLabel" func="yes">
+			<Overload retVal="">
+				<Param name="Text3D:id" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DeletePlayer3DTextLabel" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText3D:id" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="deleteproperty" func="yes">
+			<Overload retVal="">
+				<Param name="id=0" />
+				<Param name="const name[]=&quot;&quot;" />
+				<Param name="value=cellmin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DeletePVar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="varname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyA69Map" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyCapturePoint" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyCNPC" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyDamMap" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyExpBar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyFire" func="yes">
+			<Overload retVal="">
+				<Param name="fireid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyFireType" func="yes">
+			<Overload retVal="">
+				<Param name="type" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyItem" func="yes">
+			<Overload retVal="">
+				<Param name="itemid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyMenu" func="yes">
+			<Overload retVal="">
+				<Param name="Menu:menuid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyObject" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyObjectPub" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyTeleporter" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DestroyVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DetectSpecialShot" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="dini_BoolSet" func="yes">
+			<Overload retVal="">
+				<Param name="filename[]" />
+				<Param name="key[]" />
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisableInteriorEnterExits" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisableJoinPartLogging" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisableMenu" func="yes">
+			<Overload retVal="">
+				<Param name="Menu:menuid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisableNameTagLOS" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisablePlayerCheckpoint" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisablePocketMoney" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DisablePocketMoney" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="do" />
+		<KeyWord name="DoPlantSat" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EditAttachedObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="index" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EditObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="else" />
+		<KeyWord name="EnableDistancedNameTag" func="yes">
+			<Overload retVal="">
+				<Param name="delay" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EnableStuntBonusForAll" func="yes">
+			<Overload retVal="">
+				<Param name="enable" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EnableZoneNames" func="yes">
+			<Overload retVal="">
+				<Param name="enable" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="enum" />
+		<KeyWord name="exit" />
+		<KeyWord name="EXPL_main" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EXPS_Init" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="EXPS_OnPlayerUpdate" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="false" />
+		<KeyWord name="fblockwrite" func="yes">
+			<Overload retVal="">
+				<Param name="File: handle" />
+				<Param name="const buffer[]" />
+				<Param name="size = sizeof buffer" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="fclose" func="yes">
+			<Overload retVal="bool">
+				<Param name="File: handle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="File" />
+		<KeyWord name="filemode" />
+		<KeyWord name="FindLastFreeSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FinishPlantSat" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FIRE_OnPlayerConnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FireTimer" func="yes">
+			<Overload retVal="">
+				<Param name="fireid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FireUpdater" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="flength" func="yes">
+			<Overload retVal="">
+				<Param name="File: handle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FlipCar" func="yes">
+			<Overload retVal="">
+				<Param name="carid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FlipCar" func="yes">
+			<Overload retVal="">
+				<Param name="carid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="float" func="yes">
+			<Overload retVal="Float">
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Float" />
+		<KeyWord name="floatabs" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatadd" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatcmp" func="yes">
+			<Overload retVal="">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatcos" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+				<Param name="anglemode:mode=radian" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatdiv" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:dividend" />
+				<Param name="Float:divisor" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatfract" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatlog" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+				<Param name="Float:base=10.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatmul" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatpower" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+				<Param name="Float:exponent" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatround" func="yes">
+			<Overload retVal="">
+				<Param name="Float:value" />
+				<Param name="floatround_method:method=floatround_round" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatround_method" />
+		<KeyWord name="floatsin" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+				<Param name="anglemode:mode=radian" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatsqroot" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatstr" func="yes">
+			<Overload retVal="Float">
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floatsub" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="fopen" func="yes">
+			<Overload retVal="File">
+				<Param name="const name[]" />
+				<Param name="filemode: mode = io_readwrite" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="for" />
+		<KeyWord name="ForceClassSelection" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="forward" />
+		<KeyWord name="forward TryRespawn" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="fputchar" func="yes">
+			<Overload retVal="bool">
+				<Param name="File: handle" />
+				<Param name="value" />
+				<Param name="bool: utf8 = true" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="fremove" func="yes">
+			<Overload retVal="bool">
+				<Param name="const name[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="fwrite" func="yes">
+			<Overload retVal="">
+				<Param name="File: handle" />
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GameModeExit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GameTextForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="const string[]" />
+				<Param name="time" />
+				<Param name="style" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GangZoneDestroy" func="yes">
+			<Overload retVal="">
+				<Param name="zone" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GangZoneFlashForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="zone" />
+				<Param name="flashcolor" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GangZoneHideForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="zone" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GangZoneShowForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="zone" />
+				<Param name="color" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GangZoneStopFlashForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="zone" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetAnimationName" func="yes">
+			<Overload retVal="">
+				<Param name="index" />
+				<Param name="animlib[]" />
+				<Param name="len1" />
+				<Param name="animname[]" />
+				<Param name="len2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetAntiLagMultiplier" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="getarg" func="yes">
+			<Overload retVal="">
+				<Param name="arg" />
+				<Param name="index=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetBusinessFromExitPickup" func="yes">
+			<Overload retVal="">
+				<Param name="pickupid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetBusinessFromPickup" func="yes">
+			<Overload retVal="">
+				<Param name="pickupid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCityLatitude" func="yes">
+			<Overload retVal="">
+				<Param name="const ipaddress[]" />
+				<Param name="&amp;Float:lat" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCityLongitudeByName" func="yes">
+			<Overload retVal="">
+				<Param name="const name[]" />
+				<Param name="&amp;Float:lon" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCNPCFromNPID" func="yes">
+			<Overload retVal="">
+				<Param name="npid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCountryCode" func="yes">
+			<Overload retVal="">
+				<Param name="const ipaddress[]" />
+				<Param name="country[]" />
+				<Param name="size = sizeof country" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCountryCode3" func="yes">
+			<Overload retVal="">
+				<Param name="const ipaddress[]" />
+				<Param name="country[]" />
+				<Param name="size = sizeof country" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCountryCode3ByName" func="yes">
+			<Overload retVal="">
+				<Param name="const name[]" />
+				<Param name="country[]" />
+				<Param name="size = sizeof country" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCountryNameByName" func="yes">
+			<Overload retVal="">
+				<Param name="const name[]" />
+				<Param name="country[]" />
+				<Param name="size = sizeof country" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCurrentAcc" func="yes">
+			<Overload retVal="Float">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetCurrentWeaponID" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetDistanceFromMeToPoint" func="yes">
+			<Overload retVal="">
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="&amp;Float:Distance" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFirstValidClass" func="yes">
+			<Overload retVal="">
+				<Param name="forteam" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFootSyncDataByte" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFootSyncDataFloat" func="yes">
+			<Overload retVal="Float">
+				<Param name="playerid" />
+				<Param name="offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeBusinessSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeCapPointSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeClassSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeFireSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeFireTypeSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeFuelSpotSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeInvSlot" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeItemSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeItemTypeSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeMapDialogSlot" func="yes">
+			<Overload retVal="MapDialog">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeNPCSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreePerkSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeProductSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeSatSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeTeleporterSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeUpgradeSlot" func="yes">
+			<Overload retVal="">
+				<Param name="weapon" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeVRLRSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetFreeWeaponSlot" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetGMTByName" func="yes">
+			<Overload retVal="">
+				<Param name="name[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetItemClassCount" func="yes">
+			<Overload retVal="">
+				<Param name="itemclass" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetLambda" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+				<Param name="Float:vx" />
+				<Param name="Float:vy" />
+				<Param name="Float:vz" />
+				<Param name="Float:pre" />
+				<Param name="Float:divisor" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetLineCutsBox" func="yes">
+			<Overload retVal="">
+				<Param name="Float:x0" />
+				<Param name="Float:x1" />
+				<Param name="Float:x2" />
+				<Param name="Float:y0" />
+				<Param name="Float:y1" />
+				<Param name="Float:y2" />
+				<Param name="Float:z0" />
+				<Param name="Float:z1" />
+				<Param name="Float:z2" />
+				<Param name="Float:rot" />
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:vx" />
+				<Param name="Float:vy" />
+				<Param name="Float:vz" />
+				<Param name="Float:pang" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetLineToPoint" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:vx" />
+				<Param name="Float:vy" />
+				<Param name="Float:vz" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNetworkStats" func="yes">
+			<Overload retVal="">
+				<Param name="retstr[]" />
+				<Param name="retstr_size" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNextActivePerk" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodeHeader" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+				<Param name="&amp;nodes" />
+				<Param name="&amp;vehicle_nodes" />
+				<Param name="&amp;ped_nodes" />
+				<Param name="&amp;navi_nodes" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodeLinkNodeId" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodePoint" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodePointLinkId" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodePointTrafficLevel" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNodePointWidth" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNPCCameraPos" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNPCPos" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNPCState" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetNPCVehiclePos" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetObjectPos" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetObjectRot" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+				<Param name="&amp;Float:RotX" />
+				<Param name="&amp;Float:RotY" />
+				<Param name="&amp;Float:RotZ" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPDistance" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerBusinessExitPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerBusinessPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerCameraFrontVector" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:x" />
+				<Param name="&amp;Float:y" />
+				<Param name="&amp;Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerClassColor" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerClassTypes" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerCountryCode" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerCountryCode3" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerCountryCode3" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerCountryName" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerDistanceFromPoint" func="yes">
+			<Overload retVal="Float">
+				<Param name="playerid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerDrunkLevel" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerFacingAngle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:ang" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerFacingAngle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:ang" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerFightingStyle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerGMT" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerGMT" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerHealth" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerKeys" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;keys" />
+				<Param name="&amp;updown" />
+				<Param name="&amp;leftright" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerMenu" func="yes">
+			<Overload retVal="Menu">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerPing" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:x" />
+				<Param name="&amp;Float:y" />
+				<Param name="&amp;Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerSpecialAction" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerState" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerStructureInfoByte" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="structure_offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerStructureInfoInt" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="structure_offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerSurfingVehicleID" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerVehicleID" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerVelocity" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerVirtualWorld" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerWantedLevel" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPlayerWeaponState" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPointToPoint" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPointToPointF" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPointToPointSquare" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPrevActivePerk" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="getproperty" func="yes">
+			<Overload retVal="">
+				<Param name="id=0" />
+				<Param name="const name[]=&quot;&quot;" />
+				<Param name="value=cellmin" />
+				<Param name="string[]=&quot;&quot;" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPVarInt" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="varname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPVarNameAtIndex" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="index" />
+				<Param name="ret_varname[]" />
+				<Param name="ret_len" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetPVarsUpperIndex" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetRandomSkinFromGroup" func="yes">
+			<Overload retVal="">
+				<Param name="group" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetResultSpeed" func="yes">
+			<Overload retVal="Float">
+				<Param name="vehicle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetSatchelID" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetServerVarAsBool" func="yes">
+			<Overload retVal="">
+				<Param name="const varname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetServerVarAsString" func="yes">
+			<Overload retVal="">
+				<Param name="const varname[]" />
+				<Param name="buffer[]" />
+				<Param name="len" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetTankIndex" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetTickCount" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="gettime" func="yes">
+			<Overload retVal="">
+				<Param name="&amp;hour=0" />
+				<Param name="&amp;minute=0" />
+				<Param name="&amp;second=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetTotalItems" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVDist" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:vx" />
+				<Param name="Float:vy" />
+				<Param name="Float:vz" />
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+				<Param name="Float:lambda" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleComponentInSlot" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleDamageStatus" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="&amp;panels" />
+				<Param name="&amp;doors" />
+				<Param name="&amp;lights" />
+				<Param name="&amp;tires" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleDistanceFromPoint" func="yes">
+			<Overload retVal="Float">
+				<Param name="vehicleid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleModelInfo" func="yes">
+			<Overload retVal="">
+				<Param name="vehiclemodel" />
+				<Param name="infotype" />
+				<Param name="&amp;Float:X" />
+				<Param name="&amp;Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehiclePos" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="&amp;Float:x" />
+				<Param name="&amp;Float:y" />
+				<Param name="&amp;Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleStructureInfoFloat" func="yes">
+			<Overload retVal="Float">
+				<Param name="vehicleid" />
+				<Param name="structure_offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleStructureInfoInt" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="structure_offset" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetVehicleZAngle" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="&amp;Float:z_angle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetWeaponName" func="yes">
+			<Overload retVal="">
+				<Param name="weaponid" />
+				<Param name="const weapon[]" />
+				<Param name="len" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetWeaponSlot" func="yes">
+			<Overload retVal="">
+				<Param name="weaponmodel" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GivePlayerMoney" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="money" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GivePlayerWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="weaponid" />
+				<Param name="ammo" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="goto" />
+		<KeyWord name="GPickPerk" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HasAnyPlayerPerk" func="yes">
+			<Overload retVal="">
+				<Param name="perk" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HasProfile" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="heapspace" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HelloWorld" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HelloWorld" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HideExpBar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HideMenuForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="Menu:menuid" />
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HTTP" func="yes">
+			<Overload retVal="">
+				<Param name="index" />
+				<Param name="type" />
+				<Param name="url[]" />
+				<Param name="data[]" />
+				<Param name="callback[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="if" />
+		<KeyWord name="INI_Close" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="INI_Save" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="InitPlantSat" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="InterpolateCameraPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:FromX" />
+				<Param name="Float:FromY" />
+				<Param name="Float:FromZ" />
+				<Param name="Float:ToX" />
+				<Param name="Float:ToY" />
+				<Param name="Float:ToZ" />
+				<Param name="time" />
+				<Param name="cut = CAMERA_CUT" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IntToHex" func="yes">
+			<Overload retVal="">
+				<Param name="number" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="INV_Init" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="InvokeFunction" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNodePointBoats" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNodePointNotHighway" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNodePointRoadBlock1" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNodePointRoadBlock2" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNPCImpregnable" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ispacked" func="yes">
+			<Overload retVal="bool">
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerAdmin" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerConnected" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerFiring" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerInCheckpoint" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerInVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerNPC" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerObjectMoving" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPlayerOnFire" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsPointInRangeOfPointM" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:px" />
+				<Param name="Float:py" />
+				<Param name="Float:pz" />
+				<Param name="Float:tx" />
+				<Param name="Float:ty" />
+				<Param name="Float:tz" />
+				<Param name="Float:range" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsTrailerAttachedToVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsValidNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsValidPlayerObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsVectorLOSClear" func="yes">
+			<Overload retVal="">
+				<Param name="Float:x1" />
+				<Param name="Float:y1" />
+				<Param name="Float:z1" />
+				<Param name="Float:x2" />
+				<Param name="Float:y2" />
+				<Param name="Float:z2" />
+				<Param name="max" />
+				<Param name="skipfirst=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsVehicleStreamedIn" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Kick" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="KillNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="library" />
+		<KeyWord name="LimitPlayerMarkerRadius" func="yes">
+			<Overload retVal="">
+				<Param name="Float:marker_radius" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="listenport" func="yes">
+			<Overload retVal="">
+				<Param name="port" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Load" func="yes">
+			<Overload retVal="A69">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Load" func="yes">
+			<Overload retVal="Dam">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LoadConfig" func="yes">
+			<Overload retVal="">
+				<Param name="id" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LoadPlayerPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MapAndreas_FindZ_For2DCoord" func="yes">
+			<Overload retVal="">
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MapAndreas_Init" func="yes">
+			<Overload retVal="">
+				<Param name="mode" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MapDialogUpdate" func="yes">
+			<Overload retVal="">
+				<Param name="dialog" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Menu" />
+		<KeyWord name="MFEX_GetAverageZ" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MFEX_GetPlayerCameraAimVector" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="&amp;Float:vectorx" />
+				<Param name="&amp;Float:vectory" />
+				<Param name="&amp;Float:vectorz" />
+				<Param name="Float:spread=0.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MFEX_GetZ" func="yes">
+			<Overload retVal="">
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="&amp;Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="min" func="yes">
+			<Overload retVal="">
+				<Param name="value1" />
+				<Param name="value2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MovePlayerObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:Speed" />
+				<Param name="Float:RotX = -1000.0" />
+				<Param name="Float:RotY = -1000.0" />
+				<Param name="Float:RotZ = -1000.0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MoveVRLRocket" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_affected_rows" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_close" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_debug" func="yes">
+			<Overload retVal="">
+				<Param name="enable = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_fetch_field_row" func="yes">
+			<Overload retVal="">
+				<Param name="string[]" />
+				<Param name="const fieldname[]" />
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_fetch_int" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_fetch_row_format" func="yes">
+			<Overload retVal="">
+				<Param name="string[]" />
+				<Param name="const delimiter[] = &quot;|&quot;" />
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_free_result" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_insert_id" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_num_fields" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_query" func="yes">
+			<Overload retVal="">
+				<Param name="query[]" />
+				<Param name="resultid = (-1)" />
+				<Param name="extraid = (-1)" />
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_real_escape_string" func="yes">
+			<Overload retVal="">
+				<Param name="const source[]" />
+				<Param name="destination[]" />
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_reload" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_set_charset" func="yes">
+			<Overload retVal="">
+				<Param name="charset[]" />
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="mysql_store_result" func="yes">
+			<Overload retVal="">
+				<Param name="connectionHandle = 1" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NameTimer" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="native" />
+		<KeyWord name="new" />
+		<KeyWord name="NPC_AimAt" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPC_DriveTo" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:speed" />
+				<Param name="is_z_map" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPC_OnNPCMovingComplete" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPC_OnNPCSpawn" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPC_RunTo" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="is_z_map" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPC_SprintTo" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="is_z_map" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="numargs" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="OnFilterScriptInit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="OnGameModeInit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="OnPlayerSpawn" func="yes">
+			<Overload retVal="A69">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="OnPlayerSpawn" func="yes">
+			<Overload retVal="Dam">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="operator" />
+		<KeyWord name="operator-" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="operator/" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="operator*" func="yes">
+			<Overload retVal="Float">
+				<Param name="Float:oper1" />
+				<Param name="Float:oper2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PauseRecordingPlayback" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PERKS_Init" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayAudioStreamForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="url[]" />
+				<Param name="Float:posX = 0.0" />
+				<Param name="Float:posY = 0.0" />
+				<Param name="Float:posZ = 0.0" />
+				<Param name="Float:distance = 50.0" />
+				<Param name="usepos = 0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerBurnTimer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerPlaySound" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="soundid" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerSpectatePlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="targetplayerid" />
+				<Param name="mode = SPECTATE_MODE_NORMAL" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerText3D" />
+		<KeyWord name="PlayerTextDrawAlignment" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="alignment" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawBackgroundColor" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="color" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawDestroy" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawLetterSize" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawSetProportional" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="set" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawSetShadow" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="size" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawSetString" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawShow" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PlayerTextDrawUseBox" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="PlayerText:text" />
+				<Param name="use" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PocketMoney" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="print" func="yes">
+			<Overload retVal="">
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="printf" func="yes">
+			<Overload retVal="">
+				<Param name="const format[]" />
+				<Param name="{Float" />
+				<Param name="_}:..." />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ProductionTimer" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Profiler_Init" func="yes">
+			<Overload retVal="">
+				<Param name="const path_to_amx[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Profiler_Start" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Profiler_Stop" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="public" />
+		<KeyWord name="PutNPCInVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="vehicleid" />
+				<Param name="seat" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PutPlayerInVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="vehicleid" />
+				<Param name="seatid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="random" func="yes">
+			<Overload retVal="">
+				<Param name="max" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RandomSpawnPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RandomSpawnPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ReloadWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemoveBuildingForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="modelid" />
+				<Param name="Float:fX" />
+				<Param name="Float:fY" />
+				<Param name="Float:fZ" />
+				<Param name="Float:fRadius" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemoveInfoText" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemovePlayerAttachedObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="index" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemovePlayerFromVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemovePlayerMapIcon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="iconid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemoveQuestText" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RemoveVehicleRocketLauncher" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RepaintExpBar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RepairVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResetArtilleryTarget" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResetBomber" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResetCustomDeath" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResetGunWeapons" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResetPlayerInventory" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResprayCar" func="yes">
+			<Overload retVal="">
+				<Param name="carid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResprayDone" func="yes">
+			<Overload retVal="">
+				<Param name="carid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ResumeRecordingPlayback" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="return" />
+		<KeyWord name="SavePlayerPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SavePlayerPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SaveProfile" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sCountPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sCreateNitroPickup" func="yes">
+			<Overload retVal="">
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="VirtualWorld" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SD_Init" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sDestroyAllPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sDestroyPickup" func="yes">
+			<Overload retVal="">
+				<Param name="PickupID" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sDestroyPickup" func="yes">
+			<Overload retVal="">
+				<Param name="PickupID" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SecondsToHours" func="yes">
+			<Overload retVal="">
+				<Param name="seconds" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="seek_whence" />
+		<KeyWord name="SelectObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SendChat" func="yes">
+			<Overload retVal="">
+				<Param name="msg[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SendClientMessage" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="color" />
+				<Param name="const message[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SendDeathMessage" func="yes">
+			<Overload retVal="">
+				<Param name="killer" />
+				<Param name="killee" />
+				<Param name="weapon" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sendpacket" func="yes">
+			<Overload retVal="">
+				<Param name="const packet[]" />
+				<Param name="size" />
+				<Param name="const destination[]=&quot;&quot;" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SendPlayerMessageToPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="senderid" />
+				<Param name="const message[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sendstring" func="yes">
+			<Overload retVal="">
+				<Param name="const message[]" />
+				<Param name="const destination[]=&quot;&quot;" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetAntiLagMultiplier" func="yes">
+			<Overload retVal="">
+				<Param name="m" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetCameraBehindPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetDeathDropAmount" func="yes">
+			<Overload retVal="">
+				<Param name="amount" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetGameModeText" func="yes">
+			<Overload retVal="">
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetGravity" func="yes">
+			<Overload retVal="">
+				<Param name="Float:gravity" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetMenuColumnHeader" func="yes">
+			<Overload retVal="">
+				<Param name="Menu:menuid" />
+				<Param name="column" />
+				<Param name="const columnheader[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetMyFacingAngle" func="yes">
+			<Overload retVal="">
+				<Param name="Float:ang" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetMyPos" func="yes">
+			<Overload retVal="">
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNodeLink" func="yes">
+			<Overload retVal="">
+				<Param name="Node:nodeid" />
+				<Param name="linkid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCArmour" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:amount" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCCameraFrontVector" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCCameraMode" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="mode" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCFacingAngle" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:angle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCHealth" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:amount" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCImpregnable" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="istate" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCInterior" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="interior" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCKeys" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="updown" />
+				<Param name="leftright" />
+				<Param name="keys" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCPos" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCSkin" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="skin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCSpecialAction" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="action" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCSurfing" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCSurfingVehicle" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVehicleKeys" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="updown" />
+				<Param name="leftright" />
+				<Param name="keys" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVehicleQuaternion" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+				<Param name="Float:Scal" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVehicleSiren" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="vstate" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVehicleVelocity" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVehicleWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="weaponid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCVelocity" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="weaponid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCWeaponSkillLevel" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="weapontype" />
+				<Param name="level" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetNPCWeaponState" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+				<Param name="wstate" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetObjectMaterial" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+				<Param name="materialindex" />
+				<Param name="modelid" />
+				<Param name="txdname[]" />
+				<Param name="texturename[]" />
+				<Param name="materialcolor=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPDistance" func="yes">
+			<Overload retVal="">
+				<Param name="dista" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerAmmo" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="weaponslot" />
+				<Param name="ammo" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerArmedWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="weaponid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerArmour" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:armour" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerAttachedObject" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="index" />
+				<Param name="modelid" />
+				<Param name="bone" />
+				<Param name="Float:fOffsetX = 0.0" />
+				<Param name="Float:fOffsetY = 0.0" />
+				<Param name="Float:fOffsetZ = 0.0" />
+				<Param name="Float:fRotX = 0.0" />
+				<Param name="Float:fRotY = 0.0" />
+				<Param name="Float:fRotZ = 0.0" />
+				<Param name="Float:fScaleX = 1.0" />
+				<Param name="Float:fScaleY = 1.0" />
+				<Param name="Float:fScaleZ = 1.0" />
+				<Param name="materialcolor1 = 0" />
+				<Param name="materialcolor2 = 0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerCameraLookAt" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="cut = CAMERA_CUT" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerChatBubble" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="text[]" />
+				<Param name="color" />
+				<Param name="Float:drawdistance" />
+				<Param name="expiretime" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerColor" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="color" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerHealth" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:health" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerInterior" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="interiorid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerMapIcon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="iconid" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="markertype" />
+				<Param name="color" />
+				<Param name="style = MAPICON_LOCAL" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerName" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="const name[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerObjectMaterial" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+				<Param name="materialindex" />
+				<Param name="modelid" />
+				<Param name="txdname[]" />
+				<Param name="texturename[]" />
+				<Param name="materialcolor=0" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerObjectPos" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerObjectRot" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="objectid" />
+				<Param name="Float:RotX" />
+				<Param name="Float:RotY" />
+				<Param name="Float:RotZ" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerPosFindZ" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerRaceCheckpoint" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="type" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="Float:nextx" />
+				<Param name="Float:nexty" />
+				<Param name="Float:nextz" />
+				<Param name="Float:size" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerScore" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="score" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerShopName" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="shopname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerSkin" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="skinid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerSpecialAction" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="actionid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerTeam" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="teamid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerTime" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="hour" />
+				<Param name="minute" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerVirtualWorld" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="worldid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPlayerWorldBounds" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Float:x_max" />
+				<Param name="Float:x_min" />
+				<Param name="Float:y_max" />
+				<Param name="Float:y_min" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPocketMoneyAmount" func="yes">
+			<Overload retVal="">
+				<Param name="amount" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPocketMoneyFrequency" func="yes">
+			<Overload retVal="">
+				<Param name="frequency" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPocketMoneyFrequency" func="yes">
+			<Overload retVal="">
+				<Param name="frequency" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPVarFloat" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="varname[]" />
+				<Param name="Float:float_value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetPVarString" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="varname[]" />
+				<Param name="string_value[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetSpawnInfo" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="team" />
+				<Param name="skin" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+				<Param name="Float:z" />
+				<Param name="Float:rotation" />
+				<Param name="weapon1" />
+				<Param name="weapon1_ammo" />
+				<Param name="weapon2" />
+				<Param name="weapon2_ammo" />
+				<Param name="weapon3" />
+				<Param name="weapon3_ammo" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetStateBusiness" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetTeamCount" func="yes">
+			<Overload retVal="">
+				<Param name="count" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetTimer" func="yes">
+			<Overload retVal="">
+				<Param name="funcname[]" />
+				<Param name="interval" />
+				<Param name="repeating" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetTimerEx" func="yes">
+			<Overload retVal="">
+				<Param name="funcname[]" />
+				<Param name="interval" />
+				<Param name="repeating" />
+				<Param name="const format[]" />
+				<Param name="{Float" />
+				<Param name="_}:..." />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleHealth" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="Float:health" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleNumberPlate" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="numberplate[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleParamsEx" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="engine" />
+				<Param name="lights" />
+				<Param name="alarm" />
+				<Param name="doors" />
+				<Param name="bonnet" />
+				<Param name="boot" />
+				<Param name="objective" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleParamsForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="playerid" />
+				<Param name="objective" />
+				<Param name="doorslocked" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleToRespawn" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleVelocity" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="Float:X" />
+				<Param name="Float:Y" />
+				<Param name="Float:Z" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetVehicleVirtualWorld" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+				<Param name="worldid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetWeaponDamageForNPC" func="yes">
+			<Overload retVal="">
+				<Param name="weaponid" />
+				<Param name="Float:damage" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowAccountDetails" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowDamIntro" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowExpBar" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowInventoryForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowLearnedGPerks" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowNameTags" func="yes">
+			<Overload retVal="">
+				<Param name="show" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowPlayerDialog" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="dialogid" />
+				<Param name="style" />
+				<Param name="caption[]" />
+				<Param name="info[]" />
+				<Param name="button1[]" />
+				<Param name="button2[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowPlayerItemClassesDialog" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowPlayerNameTagForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="showplayerid" />
+				<Param name="show" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowSetRadioChannelDialog" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ShowSetRadioKeyDialog" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SimpleGuardTimer" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SimpleZombieTimer" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sizeof" />
+		<KeyWord name="SkydivePlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="hight" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sleep" />
+		<KeyWord name="SpawnCNPC" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SpawnNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SpawnPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sscanf" func="yes">
+			<Overload retVal="">
+				<Param name="const data[]" />
+				<Param name="const format[]" />
+				<Param name="{Float" />
+				<Param name="_}:..." />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sStartPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sStartPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sStopPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sStopPickups" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StartKI" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StartRecordingPlayback" func="yes">
+			<Overload retVal="">
+				<Param name="playbacktype" />
+				<Param name="recordname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StartRecordingPlayerData" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="recordtype" />
+				<Param name="recordname[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StartTraining" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="state" />
+		<KeyWord name="static" />
+		<KeyWord name="stock" />
+		<KeyWord name="StopCountdown" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopCountdown" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopKI" func="yes">
+			<Overload retVal="">
+				<Param name="cnpcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopNPC" func="yes">
+			<Overload retVal="">
+				<Param name="npcid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopObject" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopPlayerCountdown" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopRecordingPlayback" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StopRecordingPlayerData" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strcat" func="yes">
+			<Overload retVal="">
+				<Param name="dest[]" />
+				<Param name="const source[]" />
+				<Param name="maxlength=sizeof dest" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strcmp" func="yes">
+			<Overload retVal="">
+				<Param name="const string1[]" />
+				<Param name="const string2[]" />
+				<Param name="bool:ignorecase=false" />
+				<Param name="length=cellmax" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strdel" func="yes">
+			<Overload retVal="bool">
+				<Param name="string[]" />
+				<Param name="start" />
+				<Param name="end" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strlen" func="yes">
+			<Overload retVal="">
+				<Param name="const string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strmid" func="yes">
+			<Overload retVal="">
+				<Param name="dest[]" />
+				<Param name="const source[]" />
+				<Param name="start" />
+				<Param name="end" />
+				<Param name="maxlength=sizeof dest" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="strpack" func="yes">
+			<Overload retVal="">
+				<Param name="dest[]" />
+				<Param name="const source[]" />
+				<Param name="maxlength=sizeof dest" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="swapchars" func="yes">
+			<Overload retVal="">
+				<Param name="c" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="switch" />
+		<KeyWord name="T_2Targets" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_Flying1" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_GetWeapon" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_GrabLauncher" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_GrabMG" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_GrabSatchels" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_Heli" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_Heli2" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_Heli3" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_Heli4" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_TankBlown" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="T_WallSlug" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="tagof" />
+		<KeyWord name="TC_OnObjectMoved" func="yes">
+			<Overload retVal="">
+				<Param name="objectid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TC_OnPlayerEnterCheckpoint" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TC_OnPlayerLeaveCheckpoint" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Text" />
+		<KeyWord name="Text3D" />
+		<KeyWord name="TextDrawAlignment" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="alignment" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawBackgroundColor" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="color" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawDestroy" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawLetterSize" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="Float:x" />
+				<Param name="Float:y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawSetProportional" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="set" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawSetShadow" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="size" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawSetString" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="string[]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawShowForAll" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawShowForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="Text:text" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TextDrawUseBox" func="yes">
+			<Overload retVal="">
+				<Param name="Text:text" />
+				<Param name="use" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToggleAutodetectCheckHealth" func="yes">
+			<Overload retVal="">
+				<Param name="check" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToggleAutodetectHeadshots" func="yes">
+			<Overload retVal="">
+				<Param name="detect" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToggleAutodetectHits" func="yes">
+			<Overload retVal="">
+				<Param name="detect" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToggleAutodetectTankshots" func="yes">
+			<Overload retVal="">
+				<Param name="detect" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToggleAutodetectUseSpread" func="yes">
+			<Overload retVal="">
+				<Param name="spread" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TogglePlayerClock" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="toggle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TogglePlayerSpectating" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+				<Param name="toggle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TogglePocketMoneyMessage" func="yes">
+			<Overload retVal="">
+				<Param name="toggle" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ToogleVisualDeath" func="yes">
+			<Overload retVal="">
+				<Param name="tstate" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="toupper" func="yes">
+			<Overload retVal="">
+				<Param name="c" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="true" />
+		<KeyWord name="Unload" func="yes">
+			<Overload retVal="A69">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Unload" func="yes">
+			<Overload retVal="Dam">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateAmmoHUD" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateAttachedWeapons" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateCPLabel" func="yes">
+			<Overload retVal="">
+				<Param name="slot" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateCPMapIconForAll" func="yes">
+			<Overload retVal="">
+				<Param name="cpid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateCPMapIconsForAll" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateCPMapIconsForPlayer" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdatePlayerLabel" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="UpdateVisibleAttachements" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="uudecode" func="yes">
+			<Overload retVal="">
+				<Param name="dest[]" />
+				<Param name="const source[]" />
+				<Param name="maxlength=sizeof dest" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="V_OnPlayerConnect" func="yes">
+			<Overload retVal="">
+				<Param name="playerid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="valstr" func="yes">
+			<Overload retVal="">
+				<Param name="dest[]" />
+				<Param name="value" />
+				<Param name="bool:pack=false" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="vChange" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="VRL_OnGameModeInit" func="yes">
+			<Overload retVal="">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="VRL_OnVehicleSpawn" func="yes">
+			<Overload retVal="">
+				<Param name="vehicleid" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="while" />
+		<KeyWord name="ZMap_Init" func="yes">
+			<Overload retVal="">
+				<Param name="mapname[]" />
+			</Overload>
+		</KeyWord>
+	</AutoComplete>
+</NotepadPlus>

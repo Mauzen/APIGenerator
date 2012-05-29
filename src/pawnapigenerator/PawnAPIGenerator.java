@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -239,6 +240,14 @@ public class PawnAPIGenerator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+                
+        if (args.length == 0) {
+            String path = JOptionPane.showInputDialog("Specify the full path to your pawn source directory:");
+            PawnAPIGenerator pag = new PawnAPIGenerator(new File(path), Pattern.compile(REGEX_ALL));
+            pag.toFile("PAWN.xml", "userDefineLang.xml");
+            return;
+        }
         
         PawnAPIGenerator pag = new PawnAPIGenerator(new File(args[0]), Pattern.compile(REGEX_ALL));
         
