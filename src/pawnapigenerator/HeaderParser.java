@@ -1,5 +1,7 @@
 package pawnapigenerator;
 
+import java.util.regex.Matcher;
+
 /**
  * Parses header lines to FunctionHeader objects.
  * @author Michel "Mauzen" Soll
@@ -69,6 +71,46 @@ public class HeaderParser {
         return clean;
     }
     
+    /**
+     * Generates a FunctionHeader instance from a normal function header.
+     * @param m Regex match of the header
+     * @return Parsed header
+     */
+    public static FunctionHeader parseFromRegEx(Matcher m) {
+        FunctionType t = null;
+        String n = m.group(5);
+        String ret = m.group(4);
+        
+        for (String k : PawnAPIGenerator.KEYWORDS) {
+            if (n.equals(k)) return null;
+        }
+        
+        if (m.group(1) == null) t = FunctionType.NONE;
+        else if (m.group(2).equals("public")) t = FunctionType.PUBLIC;
+        else if (m.group(2).equals("stock")) t = FunctionType.STOCK;
+
+        if (ret == null) ret = "";
+        
+        return new FunctionHeader(t, n, m.group(6).split(","), ret);
+    }
+    
+    /**
+     * Generates a FunctionHeader instance from a native function header.
+     * @param m Regex match of the header
+     * @return Parsed header
+     */
+    public static FunctionHeader parseFromNativeRegEx(Matcher m) {
+        String n = m.group(3);
+        String ret = m.group(2);
+        
+        for (String k : PawnAPIGenerator.KEYWORDS) {
+            if (n.equals(k)) return null;
+        }
+        
+        if (ret == null) ret = "";
+        
+        return new FunctionHeader(FunctionType.NATIVE, n, m.group(4).split(","), ret);
+    }
     
     
 }

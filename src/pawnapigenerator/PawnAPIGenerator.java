@@ -1,10 +1,7 @@
 package pawnapigenerator;
 
 import java.io.*;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -15,9 +12,10 @@ import javax.swing.JOptionPane;
  */
 public class PawnAPIGenerator {
     
-    private static final String REGEX_ALL = "\\w+.*[(]\\w*[)]\\s*[{]|native .+";
+    private static final String REGEX_ALL = "((stock|public)\\s+)?((\\w+):)?(\\w+)\\s*[(]\\s*([^\\s]*(\\s*,\\s*[^\\s]+)*)[)]\\s*[{]";
+    private static final String REGEX_NATIVE = "\\s*native\\s+((\\w+):)?(\\w+)\\s*[(]\\s*(.*(\\s*,\\s*(.+))*)[)]\\s*;";
     
-    private static final String[] KEYWORDS = {"DB", "DBResult", "File", "Float", "Menu", "PlayerText3D", "Text",
+    public static final String[] KEYWORDS = {"DB", "DBResult", "File", "Float", "Menu", "PlayerText3D", "Text",
         "Text3D", "_", "anglemode", "assert", "bool", "break", "case", "char", "const", "continue", "default", "defined",
         "do", "else", "enum", "exit", "false", "filemode", "floatround_method", "for", "forward", "goto", "if", "library",
         "native", "new", "operator", "public", "return", "seek_whence", "sizeof", "sleep", "state", "static", "stock",
@@ -28,11 +26,16 @@ public class PawnAPIGenerator {
     
     private int totalFiles;
     private int validFiles;
+    private int lines;
     
     private Pattern reg;
+    private Pattern nat;
+    
+    private boolean verbose;
     
     public PawnAPIGenerator(File dir, Pattern m) {
         this.reg = m;
+        this.nat = Pattern.compile(REGEX_NATIVE);
         headers = new ArrayList<>();
         head = new ArrayList<>();
         
@@ -41,9 +44,8 @@ public class PawnAPIGenerator {
         parseAll();
         
         System.out.println();
-        System.out.println("Succesfully read " + validFiles + "/" + totalFiles + " files");
-        System.out.println("Found " + headers.size() + " possible function headers");
-        System.out.println("Added " + head.size() + " valid headers");
+        System.out.println("Succesfully read " + validFiles + "/" + totalFiles + " files (" + lines + " lines)");
+        System.out.println("Found " + headers.size() + " valid function headers");
     }    
     
     
@@ -61,26 +63,46 @@ public class PawnAPIGenerator {
     
     
     private void analyzeFile(File f) {
+        // Filecounter
         totalFiles++;
         
         BufferedReader fi = null;
         try {
             fi = new BufferedReader(new FileReader(f));
             
-            String line;
-            String lastline = "";
+            // Read the whole file to buffer
+            String full = "";
             while (fi.ready()) {
-                line = fi.readLine();
-                Matcher m = reg.matcher(lastline + line);
-                
-                if (m.matches() && lastline.trim().length() > 0) {
-                    if (!headers.contains(lastline)) headers.add(lastline);                    
-                    lastline = fi.readLine();
-                }
-                lastline = line;
-                
-            }
+                full += fi.readLine() + "\r\n";
+                lines++;
+            }            
             fi.close();
+            
+            FunctionHeader gen;
+            
+            // Group regex matches
+            Matcher m = reg.matcher(full);
+            int count = 0;
+            while (m.find()) {
+                gen = HeaderParser.parseFromRegEx(m);
+                if (gen != null && !headers.contains(gen.getName())) {
+                    head.add(gen);
+                    headers.add(gen.getName());
+                }
+                count++;
+            }
+            
+            m = nat.matcher(full);
+            while (m.find()) {
+                gen = HeaderParser.parseFromNativeRegEx(m);
+                if (gen != null && !headers.contains(gen.getName())) {
+                    head.add(gen);
+                    headers.add(gen.getName());
+                }
+                count++;                
+            }
+            if (verbose) System.out.println(f.getName() + ": " + count + " possible headers");
+            
             
         } catch (FileNotFoundException ex) {
             System.out.println("ERROR: Couldn't read from file: " + f.toString());
@@ -90,18 +112,12 @@ public class PawnAPIGenerator {
             return;
         } 
         
+        // Successcounter
         validFiles++;        
         
     }
     
     private void parseAll() {
-        for ( String s : headers ) {
-
-            FunctionHeader h = HeaderParser.parse(s);
-            if (h != null) {
-                head.add(h);
-            }
-        }
         // Add keywords and fix phrases  
         for (String k : KEYWORDS) {
             head.add(new FunctionHeader(k));

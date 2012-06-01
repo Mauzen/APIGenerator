@@ -39,7 +39,7 @@ public class FunctionHeader implements Comparable<FunctionHeader> {
         if (params != null) {
             for (int i = 0; i < params.length; i++) {
                 if (params[i].length() == 0) continue;
-                xml += "\t\t\t\t<Param name=\"" + params[i] + "\" />\r\n";                
+                xml += "\t\t\t\t<Param name=\"" + HeaderParser.transformForXML(params[i]) + "\" />\r\n";                
             }
         }
         
