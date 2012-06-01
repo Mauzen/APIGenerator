@@ -1,7 +1,7 @@
 <NotepadPlus>
 	<UserLang name="PAWN" ext="pwn inc own">
 		<Settings>
-			<Global caseIgnored="no" escapeChar="\" />
+			<Global caseIgnored="yes" escapeChar="\" />
 			<TreatAsSymbol comment="yes" commentLine="yes" />
 			<Prefix words1="no" words2="no" words3="no" words4="no" />
 		</Settings>

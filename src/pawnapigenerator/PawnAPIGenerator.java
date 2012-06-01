@@ -145,7 +145,7 @@ public class PawnAPIGenerator {
             fw.write("<?xml version=\"1.0\" encoding=\"Windows-1252\" ?>\r\n"
                     + "<NotepadPlus>\r\n"
                     + "\t<AutoComplete language=\"PAWN\">\r\n"
-                    + "\t\t<Environment ignoreCase=\"no\" startFunc=\"(\" stopFunc=\")\" paramSeparator=\",\" terminal=\";\" />\r\n\t\t\r\n");
+                    + "\t\t<Environment ignoreCase=\"yes\" startFunc=\"(\" stopFunc=\")\" paramSeparator=\",\" terminal=\";\" />\r\n\t\t\r\n");
 
             // Fix keywords
             fw.write("\t\t<KeyWord name=\"#assert\" />\r\n"
@@ -198,7 +198,7 @@ public class PawnAPIGenerator {
             fw.write("<NotepadPlus>\r\n"
                     + "\t<UserLang name=\"PAWN\" ext=\"pwn inc own\">\r\n"
                     + "\t\t<Settings>\r\n"
-                    + "\t\t\t<Global caseIgnored=\"no\" escapeChar=\"\\\" />\r\n"
+                    + "\t\t\t<Global caseIgnored=\"yes\" escapeChar=\"\\\" />\r\n"
                     + "\t\t\t<TreatAsSymbol comment=\"yes\" commentLine=\"yes\" />\r\n"
                     + "\t\t\t<Prefix words1=\"no\" words2=\"no\" words3=\"no\" words4=\"no\" />\r\n"
                     + "\t\t</Settings>\r\n");
