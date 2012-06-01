@@ -14,6 +14,7 @@ public class PawnAPIGenerator {
     
     private static final String REGEX_ALL = "((stock|public)\\s+)?((\\w+):)?(\\w+)\\s*[(]\\s*([^\\s]*(\\s*,\\s*[^\\s]+)*)[)]\\s*[{]";
     private static final String REGEX_NATIVE = "\\s*native\\s+((\\w+):)?(\\w+)\\s*[(]\\s*(.*(\\s*,\\s*(.+))*)[)]\\s*;";
+    private static final String REGEX_DEFINE = "\\*#define\\s+(";
     
     public static final String[] KEYWORDS = {"DB", "DBResult", "File", "Float", "Menu", "PlayerText3D", "Text",
         "Text3D", "_", "anglemode", "assert", "bool", "break", "case", "char", "const", "continue", "default", "defined",
