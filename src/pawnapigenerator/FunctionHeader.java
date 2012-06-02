@@ -1,21 +1,18 @@
 package pawnapigenerator;
 
-import java.text.Collator;
-
 /**
  * Data representation of a function header.
  * @author Michel "Mauzen" Soll
  */
-public class FunctionHeader implements Comparable<FunctionHeader> {
-    private FunctionType type;
-    
+public class FunctionHeader extends PawnStatement {
+   
     private String name;
     
     private String[] params;
     
     private String retVal;
     
-    public FunctionHeader(FunctionType t, String n, String[] p, String r) {
+    public FunctionHeader(StatementType t, String n, String[] p, String r) {
         type = t;
         name = n;
         params = p;
@@ -23,13 +20,14 @@ public class FunctionHeader implements Comparable<FunctionHeader> {
     }
     
     public FunctionHeader(String keyname) {
-        type = FunctionType.KEYWORD;
+        type = StatementType.KEYWORD;
         name = keyname;
     }
     
+    @Override
     public String toXML() {
         String xml;
-        if (type == FunctionType.KEYWORD) {
+        if (type == StatementType.KEYWORD) {
             xml = "\t\t<KeyWord name=\"" + name + "\" />\r\n";
             return xml;
         }
@@ -60,16 +58,9 @@ public class FunctionHeader implements Comparable<FunctionHeader> {
     public String getRetVal() {
         return retVal;
     }
-
-    public FunctionType getType() {
-        return type;
-    }
     
-    
-
     @Override
-    public int compareTo(FunctionHeader o) {
-        Collator c = Collator.getInstance();
-        return c.compare(name, o.name);
+    public String getIndexName() {
+        return name;
     }
 }

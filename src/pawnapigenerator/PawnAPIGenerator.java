@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
 public class PawnAPIGenerator {
     
     private static final String REGEX_ALL = "((stock|public)\\s+)?((\\w+):)?(\\w+)\\s*[(]\\s*([^\\s]*(\\s*,\\s*[^\\s]+)*)[)]\\s*[{]";
-    private static final String REGEX_NATIVE = "\\s*native\\s+((\\w+):)?(\\w+)\\s*[(]\\s*(.*(\\s*,\\s*(.+))*)[)]\\s*;";
-    private static final String REGEX_DEFINE = "\\*#define\\s+(";
+    private static final String REGEX_NATIVE = "native\\s+((\\w+):)?(\\w+)\\s*[(]\\s*(.*(\\s*,\\s*(.+))*)[)]\\s*;";
+    private static final String REGEX_DEFINE = "#define\\s+((\\w+)([(](%\\d+)?(,%\\d+)*[)])?)\\s*([^\\s]*)";
     
     public static final String[] KEYWORDS = {"DB", "DBResult", "File", "Float", "Menu", "PlayerText3D", "Text",
         "Text3D", "_", "anglemode", "assert", "bool", "break", "case", "char", "const", "continue", "default", "defined",
@@ -23,7 +23,7 @@ public class PawnAPIGenerator {
         "switch", "tagof", "true", "while"};
 
     private ArrayList<String> headers;
-    private ArrayList<FunctionHeader> head;
+    private ArrayList<PawnStatement> head;
     
     private int totalFiles;
     private int validFiles;
@@ -31,12 +31,14 @@ public class PawnAPIGenerator {
     
     private Pattern reg;
     private Pattern nat;
+    private Pattern def;
     
     private boolean verbose;
     
     public PawnAPIGenerator(File dir, Pattern m) {
         this.reg = m;
         this.nat = Pattern.compile(REGEX_NATIVE);
+        this.def = Pattern.compile(REGEX_DEFINE);
         headers = new ArrayList<>();
         head = new ArrayList<>();
         
@@ -46,7 +48,11 @@ public class PawnAPIGenerator {
         
         System.out.println();
         System.out.println("Succesfully read " + validFiles + "/" + totalFiles + " files (" + lines + " lines)");
-        System.out.println("Found " + headers.size() + " valid function headers");
+        System.out.println("Found " + headers.size() + " valid statements:");
+        System.out.println("\t" + countStatements(StatementType.NATIVE) + " natives, " + countStatements(StatementType.PUBLIC) + " publics, "
+                + countStatements(StatementType.STOCK) + " stocks, " + countStatements(StatementType.NONE) + " other functions");
+        System.out.println("\t" + countStatements(StatementType.DEFINE) + " defines");
+        
     }    
     
     
@@ -79,16 +85,16 @@ public class PawnAPIGenerator {
             }            
             fi.close();
             
-            FunctionHeader gen;
+            PawnStatement gen;
             
             // Group regex matches
             Matcher m = reg.matcher(full);
             int count = 0;
             while (m.find()) {
                 gen = HeaderParser.parseFromRegEx(m);
-                if (gen != null && !headers.contains(gen.getName())) {
+                if (gen != null && !headers.contains(gen.getIndexName())) {
                     head.add(gen);
-                    headers.add(gen.getName());
+                    headers.add(gen.getIndexName());
                 }
                 count++;
             }
@@ -96,13 +102,26 @@ public class PawnAPIGenerator {
             m = nat.matcher(full);
             while (m.find()) {
                 gen = HeaderParser.parseFromNativeRegEx(m);
-                if (gen != null && !headers.contains(gen.getName())) {
+                if (gen != null && !headers.contains(gen.getIndexName())) {
                     head.add(gen);
-                    headers.add(gen.getName());
+                    headers.add(gen.getIndexName());
                 }
                 count++;                
+            }            
+            
+            m = def.matcher(full);
+            while (m.find()) {
+                gen = HeaderParser.parseDefineRegEx(m);
+                // Only add non-parameter defines
+                if (gen != null && !headers.contains(gen.getIndexName())) {
+                    head.add(gen);
+                    headers.add(gen.getIndexName());
+                }
+                count++;
+                //count++;                
             }
-            if (verbose) System.out.println(f.getName() + ": " + count + " possible headers");
+            
+            if (verbose) System.out.println(f.getName() + ": " + count + " statements");
             
             
         } catch (FileNotFoundException ex) {
@@ -127,6 +146,11 @@ public class PawnAPIGenerator {
         java.util.Collections.sort(head);
     }
     
+    /**
+     * Assembles userDefinedLanguage.xml and PAWN.xml from the collected data.
+     * @param path1
+     * @param path2 
+     */
     public void toFile(String path1, String path2) {
         File f = new File(path1);
         if (!f.exists()) {
@@ -166,7 +190,7 @@ public class PawnAPIGenerator {
                     + "\t\t<KeyWord name=\"#undef\" />\r\n\t\t\r\n");
 
             // Custom functions
-            for (FunctionHeader h : head) {
+            for (PawnStatement h : head) {
                 fw.write(h.toXML());
             }
 
@@ -199,7 +223,7 @@ public class PawnAPIGenerator {
             fw.write("<NotepadPlus>\r\n"
                     + "\t<UserLang name=\"PAWN\" ext=\"pwn inc own\">\r\n"
                     + "\t\t<Settings>\r\n"
-                    + "\t\t\t<Global caseIgnored=\"yes\" escapeChar=\"\\\" />\r\n"
+                    + "\t\t\t<Global caseIgnored=\"no\" escapeChar=\"\\\" />\r\n"
                     + "\t\t\t<TreatAsSymbol comment=\"yes\" commentLine=\"yes\" />\r\n"
                     + "\t\t\t<Prefix words1=\"no\" words2=\"no\" words3=\"no\" words4=\"no\" />\r\n"
                     + "\t\t</Settings>\r\n");
@@ -212,16 +236,23 @@ public class PawnAPIGenerator {
                     + "\t\t\t<Keywords name=\"Comment\">1/* 2*/ 0//</Keywords>\r\n"
                     + "\t\t\t<Keywords name=\"Words1\">");
             
-            // Dynamics
-            for (FunctionHeader h : head) {
-                if (h.getType() == FunctionType.KEYWORD) continue;
-                fw.write(h.getName() + " ");
+            // Functions
+            for (PawnStatement h : head) {
+                if (!(h.getType() == StatementType.NATIVE || h.getType() == StatementType.NONE || h.getType() == StatementType.STOCK
+                        || h.getType() == StatementType.PUBLIC)) continue;
+                fw.write(h.getIndexName() + " ");
+            }
+            fw.write("</Keywords>\r\n"
+                    + "\t\t\t<Keywords name=\"Words2\">");
+            // Defines
+            for (PawnStatement h : head) {
+                if (!(h.getType() == StatementType.DEFINE)) continue;
+                fw.write(h.getIndexName() + " ");
             }
             fw.write("</Keywords>\r\n");
         
-            // The UGLY rest
-            fw.write("\t\t\t<Keywords name=\"Words2\">SPECIAL_ACTION_NONE SPECIAL_ACTION_DUCK SPECIAL_ACTION_USEJETPACK SPECIAL_ACTION_ENTER_VEHICLE SPECIAL_ACTION_EXIT_VEHICLE SPECIAL_ACTION_DANCE1 SPECIAL_ACTION_DANCE2 SPECIAL_ACTION_DANCE3 SPECIAL_ACTION_DANCE4 SPECIAL_ACTION_HANDSUP SPECIAL_ACTION_USECELLPHONE SPECIAL_ACTION_SITTING SPECIAL_ACTION_STOPUSECELLPHONE SPECIAL_ACTION_DRINK_BEER SPECIAL_ACTION_SMOKE_CIGGY SPECIAL_ACTION_DRINK_WINE SPECIAL_ACTION_DRINK_SPRUNK FIGHT_STYLE_NORMAL FIGHT_STYLE_BOXING FIGHT_STYLE_KUNGFU FIGHT_STYLE_KNEEHEAD FIGHT_STYLE_GRABKICK FIGHT_STYLE_ELBOW WEAPONSKILL_PISTOL WEAPONSKILL_PISTOL_SILENCED WEAPONSKILL_DESERT_EAGLE WEAPONSKILL_SHOTGUN WEAPONSKILL_SAWNOFF_SHOTGUN WEAPONSKILL_SPAS12_SHOTGUN WEAPONSKILL_MICRO_UZI WEAPONSKILL_MP5 WEAPONSKILL_AK47 WEAPONSKILL_M4 WEAPONSKILL_SNIPERRIFLE WEAPONSTATE_UNKNOWN WEAPONSTATE_NO_BULLETS WEAPONSTATE_LAST_BULLET WEAPONSTATE_MORE_BULLETS WEAPONSTATE_RELOADING PLAYER_VARTYPE_NONE PLAYER_VARTYPE_INT PLAYER_VARTYPE_STRING PLAYER_VARTYPE_FLOAT MAX_CHATBUBBLE_LENGTH SPECTATE_MODE_NORMAL SPECTATE_MODE_FIXED SPECTATE_MODE_SIDE PLAYER_RECORDING_TYPE_NONE PLAYER_RECORDING_TYPE_DRIVER PLAYER_RECORDING_TYPE_ONFOOT _objects_included _samp_included PLAYER_RECORDING_TYPE_NONE PLAYER_RECORDING_TYPE_DRIVER PLAYER_RECORDING_TYPE_ONFOOT PLAYER_STATE_NONE PLAYER_STATE_ONFOOT PLAYER_STATE_DRIVER PLAYER_STATE_PASSENGER PLAYER_STATE_WASTED PLAYER_STATE_SPAWNED PLAYER_STATE_SPECTATING MAX_PLAYER_NAME MAX_PLAYERS MAX_VEHICLES INVALID_PLAYER_ID INVALID_VEHICLE_ID NO_TEAM MAX_OBJECTS INVALID_OBJECT_ID MAX_GANG_ZONES MAX_TEXT_DRAWS MAX_MENUS INVALID_MENU INVALID_TEXT_DRAW INVALID_GANG_ZONE WEAPON_BRASSKNUCKLE WEAPON_GOLFCLUB WEAPON_NITESTICK WEAPON_KNIFE WEAPON_BAT WEAPON_SHOVEL WEAPON_POOLSTICK WEAPON_KATANA WEAPON_CHAINSAW WEAPON_DILDO WEAPON_DILDO2 WEAPON_VIBRATOR WEAPON_VIBRATOR2 WEAPON_FLOWER WEAPON_CANE WEAPON_GRENADE WEAPON_TEARGAS WEAPON_MOLTOV WEAPON_COLT45 WEAPON_SILENCED WEAPON_DEAGLE WEAPON_SHOTGUN WEAPON_SAWEDOFF WEAPON_SHOTGSPA WEAPON_UZI WEAPON_MP5 WEAPON_AK47 WEAPON_M4 WEAPON_TEC9 WEAPON_RIFLE WEAPON_SNIPER WEAPON_ROCKETLAUNCHER WEAPON_HEATSEEKER WEAPON_FLAMETHROWER WEAPON_MINIGUN WEAPON_SATCHEL WEAPON_BOMB WEAPON_SPRAYCAN WEAPON_FIREEXTINGUISHER WEAPON_CAMERA WEAPON_PARACHUTE WEAPON_VEHICLE WEAPON_DROWN WEAPON_COLLISION KEY_ACTION KEY_CROUCH KEY_FIRE KEY_SPRINT KEY_SECONDARY_ATTACK KEY_JUMP KEY_LOOK_RIGHT KEY_HANDBRAKE KEY_LOOK_LEFT KEY_SUBMISSION KEY_LOOK_BEHIND KEY_WALK KEY_ANALOG_UP KEY_ANALOG_DOWN KEY_ANALOG_RIGHT KEY_ANALOG_LEFT KEY_UP KEY_DOWN KEY_LEFT KEY_RIGHT HTTP_GET HTTP_POST HTTP_HEAD HTTP_ERROR_BAD_HOST HTTP_ERROR_NO_SOCKET HTTP_ERROR_CANT_CONNECT HTTP_ERROR_CANT_WRITE HTTP_ERROR_CONTENT_TOO_BIG HTTP_ERROR_MALFORMED_RESPONSE _time_included _string_included _Float_included _file_included _datagram_included _core_included _vehicles_included CARMODTYPE_SPOILER CARMODTYPE_HOOD CARMODTYPE_ROOF CARMODTYPE_SIDESKIRT CARMODTYPE_LAMPS CARMODTYPE_NITRO CARMODTYPE_EXHAUST CARMODTYPE_WHEELS CARMODTYPE_STEREO CARMODTYPE_HYDRAULICS CARMODTYPE_FRONT_BUMPER CARMODTYPE_REAR_BUMPER CARMODTYPE_VENT_RIGHT CARMODTYPE_VENT_LEFT _sampdb_included _samp_included MAX_PLAYER_NAME MAX_PLAYERS MAX_VEHICLES INVALID_PLAYER_ID INVALID_VEHICLE_ID NO_TEAM MAX_OBJECTS INVALID_OBJECT_ID MAX_GANG_ZONES MAX_TEXT_DRAWS MAX_MENUS MAX_3DTEXT_GLOBAL MAX_3DTEXT_PLAYER MAX_PICKUPS INVALID_MENU INVALID_TEXT_DRAW INVALID_GANG_ZONE INVALID_3DTEXT_ID DIALOG_STYLE_MSGBOX DIALOG_STYLE_INPUT DIALOG_STYLE_LIST PLAYER_STATE_NONE PLAYER_STATE_ONFOOT PLAYER_STATE_DRIVER PLAYER_STATE_PASSENGER PLAYER_STATE_EXIT_VEHICLE PLAYER_STATE_ENTER_VEHICLE_DRIVER PLAYER_STATE_ENTER_VEHICLE_PASSENGER PLAYER_STATE_WASTED PLAYER_STATE_SPAWNED PLAYER_STATE_SPECTATING PLAYER_MARKERS_MODE_OFF PLAYER_MARKERS_MODE_GLOBAL PLAYER_MARKERS_MODE_STREAMED WEAPON_BRASSKNUCKLE WEAPON_GOLFCLUB WEAPON_NITESTICK WEAPON_KNIFE WEAPON_BAT WEAPON_SHOVEL WEAPON_POOLSTICK WEAPON_KATANA WEAPON_CHAINSAW WEAPON_DILDO WEAPON_DILDO2 WEAPON_VIBRATOR WEAPON_VIBRATOR2 WEAPON_FLOWER WEAPON_CANE WEAPON_GRENADE WEAPON_TEARGAS WEAPON_MOLTOV WEAPON_COLT45 WEAPON_SILENCED WEAPON_DEAGLE WEAPON_SHOTGUN WEAPON_SAWEDOFF WEAPON_SHOTGSPA WEAPON_UZI WEAPON_MP5 WEAPON_AK47 WEAPON_M4 WEAPON_TEC9 WEAPON_RIFLE WEAPON_SNIPER WEAPON_ROCKETLAUNCHER WEAPON_HEATSEEKER WEAPON_FLAMETHROWER WEAPON_MINIGUN WEAPON_SATCHEL WEAPON_BOMB WEAPON_SPRAYCAN WEAPON_FIREEXTINGUISHER WEAPON_CAMERA WEAPON_PARACHUTE WEAPON_VEHICLE WEAPON_DROWN WEAPON_COLLISION KEY_ACTION KEY_CROUCH KEY_FIRE KEY_SPRINT KEY_SECONDARY_ATTACK KEY_JUMP KEY_LOOK_RIGHT KEY_HANDBRAKE KEY_LOOK_LEFT KEY_SUBMISSION KEY_LOOK_BEHIND KEY_WALK KEY_ANALOG_UP KEY_ANALOG_DOWN KEY_ANALOG_LEFT KEY_ANALOG_RIGHT KEY_UP KEY_DOWN KEY_LEFT KEY_RIGHT CLICK_SOURCE_SCOREBOARD floatround_round floatround_floor floatround_ceil floatround_tozero floatround_unbiased seek_start seek_current seek_end EOS cellbits cellmax cellmin charbits charmin charmax ucharmax __Pawn debug overlaysize radian degrees grades MAX_PLAYER_ATTACHED_OBJECTS VEHICLE_PARAMS_UNSET VEHICLE_PARAMS_OFF VEHICLE_PARAMS_ON</Keywords>\r\n"
-                    + "\t\t\t<Keywords name=\"Words3\">#assert #define #else #elseif #endif #endinput #error #file #if #include #line #pragma #tryinclude #undef #emit</Keywords>\r\n"
+            // The UGLY rest            
+            fw.write("\t\t\t<Keywords name=\"Words3\">#assert #define #else #elseif #endif #endinput #error #file #if #include #line #pragma #tryinclude #undef #emit</Keywords>\r\n"
                     + "\t\t\t<Keywords name=\"Words4\">DB DBResult File Float Menu PlayerText3D Text Text3D _ anglemode assert bool break case char const continue default defined do else enum exit false filemode floatround_method for forward goto if library native new operator public return seek_whence sizeof sleep state static stock switch tagof true while</Keywords>\r\n"
                     + "\t\t</KeywordLists>\r\n"
                     + "\t\t<Styles>\r\n"
@@ -256,8 +287,7 @@ public class PawnAPIGenerator {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {        
                 
         if (args.length == 0) {
             String path = JOptionPane.showInputDialog("Specify the full path to your pawn source directory:");
@@ -283,8 +313,15 @@ public class PawnAPIGenerator {
             {
                 pag.toFile(args[1], args[2]);
             }
+        }        
+    }
+    
+    public int countStatements(StatementType t) {
+        int count = 0;
+        for (PawnStatement p : head) {
+            if (p.getType() == t) count++;
         }
-        
+        return count;
     }
     
 }

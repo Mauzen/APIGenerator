@@ -1,14 +1,15 @@
 package pawnapigenerator;
 
 /**
- * All valid PAWN function types.
+ * Valid PAWN statement types.
  * @author Michel "Mauzen" Soll
  */
-public enum FunctionType {
+public enum StatementType {
     PUBLIC,
     STOCK,
     NATIVE,
     NONE,
     KEYWORD,
+    DEFINE,
     UNKNOWN
 }

@@ -9,23 +9,23 @@ import java.util.regex.Matcher;
 public class HeaderParser {
     
     public static FunctionHeader parse(String h) {
-        FunctionType t = FunctionType.UNKNOWN;
+        StatementType t = StatementType.UNKNOWN;
         String n = "";
         String[] p = null;
         String r = "";
         
         // find function type
         if (h.trim().startsWith("public ")) {
-            t = FunctionType.PUBLIC;
+            t = StatementType.PUBLIC;
             h = h.substring(7);
         } else if (h.trim().startsWith("stock ")) {
-            t = FunctionType.STOCK;
+            t = StatementType.STOCK;
             h = h.substring(6);
         } else if (h.trim().startsWith("native ")) {
-            t = FunctionType.NATIVE;
+            t = StatementType.NATIVE;
             h = h.substring(7);
         } else {
-            t = FunctionType.NONE;
+            t = StatementType.NONE;
         }
         
         // Return type (bugged for BLABLA:name defines)
@@ -77,7 +77,7 @@ public class HeaderParser {
      * @return Parsed header
      */
     public static FunctionHeader parseFromRegEx(Matcher m) {
-        FunctionType t = null;
+        StatementType t = null;
         String n = m.group(5);
         String ret = m.group(4);
         
@@ -85,9 +85,9 @@ public class HeaderParser {
             if (n.equals(k)) return null;
         }
         
-        if (m.group(1) == null) t = FunctionType.NONE;
-        else if (m.group(2).equals("public")) t = FunctionType.PUBLIC;
-        else if (m.group(2).equals("stock")) t = FunctionType.STOCK;
+        if (m.group(1) == null) t = StatementType.NONE;
+        else if (m.group(2).equals("public")) t = StatementType.PUBLIC;
+        else if (m.group(2).equals("stock")) t = StatementType.STOCK;
 
         if (ret == null) ret = "";
         
@@ -109,7 +109,18 @@ public class HeaderParser {
         
         if (ret == null) ret = "";
         
-        return new FunctionHeader(FunctionType.NATIVE, n, m.group(4).split(","), ret);
+        return new FunctionHeader(StatementType.NATIVE, n, m.group(4).split(","), ret);
+    }
+    
+    
+    /**
+     * Generates a Functionheader instance
+     * @param m
+     * @return 
+     */
+    public static PawnDefine parseDefineRegEx(Matcher m) {
+        PawnDefine p = new PawnDefine(m.group(2), m.group(1), m.group(6));
+        return p;
     }
     
     
