@@ -1,0 +1,4 @@
+I want to release a small tool that I made for myself recently.
+Im using Notepad++ as default PAWN editor, as it offers some really nice things that pawno cant do. The code completion is a quite nice feature. I once used [Slice's tutorial (http://forum.sa-mp.com/showthread.php?t=174046) to set everything up, but got tired of the "limited" code completion after a while, as im used to code completions that update themselves whenever you add a new function to your code. Notepad++ just completes what you tell it to complete in a xml file.
+
+The generator analyzes all files in the given directory and scans them for functions, natives, and defines. From that it generates the userDefineLang.xml and PAWN.xml for Notepad++. This way it makes all custom things available for code completion and highlighting.
