@@ -24,10 +24,15 @@ public class FunctionHeader extends PawnStatement {
         name = keyname;
     }
     
+    public FunctionHeader(String n, StatementType t) {
+        name = n;
+        type = t;
+    }
+    
     @Override
     public String toXML() {
         String xml;
-        if (type == StatementType.KEYWORD) {
+        if (type == StatementType.KEYWORD || type == StatementType.TAG) {
             xml = "\t\t<KeyWord name=\"" + name + "\" />\r\n";
             return xml;
         }

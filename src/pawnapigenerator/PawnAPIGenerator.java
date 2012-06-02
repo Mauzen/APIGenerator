@@ -15,12 +15,11 @@ public class PawnAPIGenerator {
     private static final String REGEX_ALL = "((stock|public)\\s+)?((\\w+):)?(\\w+)\\s*[(]\\s*([^\\s]*(\\s*,\\s*[^\\s]+)*)[)]\\s*[{]";
     private static final String REGEX_NATIVE = "native\\s+((\\w+):)?(\\w+)\\s*[(]\\s*(.*(\\s*,\\s*(.+))*)[)]\\s*;";
     private static final String REGEX_DEFINE = "#define\\s+((\\w+)([(](%\\d+)?(,%\\d+)*[)])?)\\s*([^\\s]*)";
+    private static final String REGEX_TAG = "(\\w+[^\\s(),]*):";
     
-    public static final String[] KEYWORDS = {"DB", "DBResult", "File", "Float", "Menu", "PlayerText3D", "Text",
-        "Text3D", "_", "anglemode", "assert", "bool", "break", "case", "char", "const", "continue", "default", "defined",
-        "do", "else", "enum", "exit", "false", "filemode", "floatround_method", "for", "forward", "goto", "if", "library",
-        "native", "new", "operator", "public", "return", "seek_whence", "sizeof", "sleep", "state", "static", "stock",
-        "switch", "tagof", "true", "while"};
+    public static final String[] KEYWORDS = {"assert", "break", "case", "char", "const", "continue", "default", "defined",
+        "do", "else", "enum", "exit", "false", "for", "forward", "goto", "if", "library", "native", "new", "operator", 
+        "public", "return", "sizeof", "sleep", "state", "static", "stock", "switch", "tagof", "true", "while"};        
 
     private ArrayList<String> headers;
     private ArrayList<PawnStatement> head;
@@ -32,6 +31,7 @@ public class PawnAPIGenerator {
     private Pattern reg;
     private Pattern nat;
     private Pattern def;
+    private Pattern tag;
     
     private boolean verbose;
     
@@ -39,19 +39,26 @@ public class PawnAPIGenerator {
         this.reg = m;
         this.nat = Pattern.compile(REGEX_NATIVE);
         this.def = Pattern.compile(REGEX_DEFINE);
+        this.tag = Pattern.compile(REGEX_TAG);
         headers = new ArrayList<>();
         head = new ArrayList<>();
         
+        // Add keywords and fix phrases  
+        for (String k : KEYWORDS) {
+            head.add(new FunctionHeader(k));
+            headers.add(k);
+        }       
+        
         checkRecursive(dir);
         
-        parseAll();
-        
+        java.util.Collections.sort(head);
+               
         System.out.println();
         System.out.println("Succesfully read " + validFiles + "/" + totalFiles + " files (" + lines + " lines)");
         System.out.println("Found " + headers.size() + " valid statements:");
         System.out.println("\t" + countStatements(StatementType.NATIVE) + " natives, " + countStatements(StatementType.PUBLIC) + " publics, "
                 + countStatements(StatementType.STOCK) + " stocks, " + countStatements(StatementType.NONE) + " other functions");
-        System.out.println("\t" + countStatements(StatementType.DEFINE) + " defines");
+        System.out.println("\t" + countStatements(StatementType.DEFINE) + " defines, " + countStatements(StatementType.TAG) + " tags");
         
     }    
     
@@ -87,7 +94,6 @@ public class PawnAPIGenerator {
             
             PawnStatement gen;
             
-            // Group regex matches
             Matcher m = reg.matcher(full);
             int count = 0;
             while (m.find()) {
@@ -96,6 +102,7 @@ public class PawnAPIGenerator {
                     head.add(gen);
                     headers.add(gen.getIndexName());
                 }
+                addFunctionTags((FunctionHeader)gen);
                 count++;
             }
             
@@ -106,19 +113,19 @@ public class PawnAPIGenerator {
                     head.add(gen);
                     headers.add(gen.getIndexName());
                 }
+                addFunctionTags((FunctionHeader)gen);
                 count++;                
-            }            
+            }
+            
             
             m = def.matcher(full);
             while (m.find()) {
                 gen = HeaderParser.parseDefineRegEx(m);
-                // Only add non-parameter defines
                 if (gen != null && !headers.contains(gen.getIndexName())) {
                     head.add(gen);
                     headers.add(gen.getIndexName());
                 }
                 count++;
-                //count++;                
             }
             
             if (verbose) System.out.println(f.getName() + ": " + count + " statements");
@@ -137,13 +144,27 @@ public class PawnAPIGenerator {
         
     }
     
-    private void parseAll() {
-        // Add keywords and fix phrases  
-        for (String k : KEYWORDS) {
-            head.add(new FunctionHeader(k));
+    private void addFunctionTags(FunctionHeader h) {
+        if (h == null) return;
+        String tmp[];
+        
+        if (!headers.contains(h.getRetVal())) {
+            head.add(new FunctionHeader(h.getRetVal(), StatementType.TAG));
+            headers.add(h.getRetVal());
         }
         
-        java.util.Collections.sort(head);
+        for (String g : h.getParams()) {
+            tmp = g.split(":");
+            if (tmp.length > 1) {
+                tmp[0] = tmp[0].trim();
+                if (tmp[0].charAt(0) == '&') tmp[0] = tmp[0].substring(1);
+                
+                if (!headers.contains(tmp[0]) && !tmp[0].endsWith("}")) {
+                    head.add(new FunctionHeader(tmp[0], StatementType.TAG));
+                    headers.add(tmp[0]);
+                }                
+            }
+        }
     }
     
     /**
@@ -253,8 +274,15 @@ public class PawnAPIGenerator {
         
             // The UGLY rest            
             fw.write("\t\t\t<Keywords name=\"Words3\">#assert #define #else #elseif #endif #endinput #error #file #if #include #line #pragma #tryinclude #undef #emit</Keywords>\r\n"
-                    + "\t\t\t<Keywords name=\"Words4\">DB DBResult File Float Menu PlayerText3D Text Text3D _ anglemode assert bool break case char const continue default defined do else enum exit false filemode floatround_method for forward goto if library native new operator public return seek_whence sizeof sleep state static stock switch tagof true while</Keywords>\r\n"
-                    + "\t\t</KeywordLists>\r\n"
+                    + "\t\t\t<Keywords name=\"Words4\">");
+            
+            for (PawnStatement h : head) {
+                if (!(h.getType() == StatementType.TAG || h.getType() == StatementType.KEYWORD)) continue;
+                fw.write(h.getIndexName() + " ");
+            }
+            fw.write("</Keywords>\r\n");
+                    
+            fw.write("\t\t</KeywordLists>\r\n"
                     + "\t\t<Styles>\r\n"
                     + "\t\t\t<WordsStyle name=\"DEFAULT\" styleID=\"11\" fgColor=\"000000\" bgColor=\"FFFFFF\" fontName=\"\" fontStyle=\"0\" />\r\n"
                     + "\t\t\t<WordsStyle name=\"FOLDEROPEN\" styleID=\"12\" fgColor=\"000000\" bgColor=\"FFFFFF\" fontName=\"\" fontStyle=\"0\" />\r\n"

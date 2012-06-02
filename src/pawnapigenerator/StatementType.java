@@ -1,7 +1,7 @@
 package pawnapigenerator;
 
 /**
- * Valid PAWN statement types.
+ * Used PAWN statement types.
  * @author Michel "Mauzen" Soll
  */
 public enum StatementType {
@@ -11,5 +11,6 @@ public enum StatementType {
     NONE,
     KEYWORD,
     DEFINE,
+    TAG,
     UNKNOWN
 }
